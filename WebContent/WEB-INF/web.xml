@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<!-- context-param is available throughout the application -->
+	<context-param>
+
+		<param-name>appName</param-name>
+		<param-value>TutorialWeb</param-value>
+
+	</context-param>
+	<servlet>
+		<servlet-name>GenServlet</servlet-name>
+		<servlet-class>com.generic.servlets.GenServlet</servlet-class>
+
+		<!-- init-param is only accessible within this servlet and context-param 
+			is available throughout -->
+		<init-param>
+			<param-name>myName</param-name>
+			<param-value>Sachin</param-value>
+		</init-param>
+		<!-- init-param is only accessible within this servlet -->
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>GenServlet</servlet-name>
+		<url-pattern>/GenericServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ContextServlet</servlet-name>
+		<servlet-class>com.generic.servlets.ContextServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ContextServlet</servlet-name>
+		<url-pattern>/ContextServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
